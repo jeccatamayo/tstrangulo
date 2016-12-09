@@ -11,5 +11,36 @@ Scenario: Ver que la palabra se complete con la letra ingresada
 
 Scenario: Ver que aun me quedan dos intentos
 	Given abro la aplicacion
-	Then debo ver el texto "2 INTENTOS"
+	Then debo ver el texto "intentos"
 	
+Scenario: Ver el estado del juego cuando se ingresa una letra incorrecta
+	Given abro la aplicacion
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	Then debo ver "Te quedan 4 intentos"
+	
+Scenario: Ver el estado del juego cuando se ingresa una letra incorrecta
+	Given abro la aplicacion
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	Then debo ver "Te queda un solo intento! JOJOLETE!"
+
+Scenario: Ver el estado del juego cuando se ingresa una letra incorrecta
+	Given abro la aplicacion
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	And ingreso la letra "Q"
+	And hago clic en el boton Validar
+	Then debo ver "FRITO PESCADITO. ESTAS STRANGULADO!"

@@ -23,7 +23,7 @@ Then(/^debo invocar al controlador validar$/) do
 end
 
 Given(/^ingreso la letra "([^"]*)"$/) do |letra|
-  fill_in("letra", :with => "A")
+  fill_in("letra", :with => letra)
 end
 
 Then(/^debo ver que la letra "([^"]*)", se muestre como parte de la palabra$/) do |texto|
@@ -31,5 +31,9 @@ Then(/^debo ver que la letra "([^"]*)", se muestre como parte de la palabra$/) d
 end
 
 Then(/^debo ver el texto "([^"]*)"$/) do |texto|
+  expect(page.body).to match /#{texto}/m
+end
+
+Then(/^debo ver "([^"]*)"$/) do |texto|
   expect(page.body).to match /#{texto}/m
 end
