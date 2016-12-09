@@ -16,3 +16,9 @@ get '/' do
 	session["tstrangulo"].mostrarEspacios
 	erb :index
 end
+
+post '/validar' do
+    letra = params["letra"]
+    session["tstrangulo"].letraExisteEnPalabra letra "CELULARES"
+    erb :index
+end
