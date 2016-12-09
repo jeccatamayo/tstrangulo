@@ -62,8 +62,10 @@ class Tstrangulo
 		mensaje = ""
 		if @palabraEspacios.include? "_"
 			if restante > 1
+				@flagJuegoTerminado = false
 				mensaje = "Te quedan #{restante} intentos"
 			elsif restante == 1
+				@flagJuegoTerminado = false
 				mensaje = "Te queda un solo intento! JOJOLETE!"
 			else 
 				@flagJuegoTerminado = true

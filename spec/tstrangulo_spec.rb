@@ -79,4 +79,34 @@ describe Tstrangulo do
 		stran.ponerLetraEnPalabra("M")
 		expect(stran.verEstadoJuego).to eq "ERES EL PUTO AMO! Eres un CERTIFIED STRANGULADO MASTER, O sea un CSM"
 	end
+	
+	it "Ganaste el juego el flag debe decir terminado" do
+	    stran = Tstrangulo.new 5
+	    stran.mostrarEspacios
+		stran.ponerLetraEnPalabra("O")
+		stran.ponerLetraEnPalabra("g")
+		stran.ponerLetraEnPalabra("r")
+		stran.ponerLetraEnPalabra("a")
+		stran.ponerLetraEnPalabra("b")
+		stran.ponerLetraEnPalabra("p")
+		stran.ponerLetraEnPalabra("L")
+		stran.ponerLetraEnPalabra("u")
+		stran.ponerLetraEnPalabra("M")
+		expect(stran.esJuegoTerminado) == true
+	end
+	
+	it "Estas perdiendo pero aun tienes chance, el juego aun no termina" do
+	    stran = Tstrangulo.new 6
+	    stran.mostrarEspacios
+		stran.ponerLetraEnPalabra("O")
+		stran.ponerLetraEnPalabra("g")
+		stran.ponerLetraEnPalabra("r")
+		stran.ponerLetraEnPalabra("a")
+		stran.ponerLetraEnPalabra("b")
+		stran.ponerLetraEnPalabra("p")
+		stran.ponerLetraEnPalabra("L")
+		stran.ponerLetraEnPalabra("u")
+		stran.ponerLetraEnPalabra("M")
+		expect(stran.esJuegoTerminado) == false
+	end
 end
