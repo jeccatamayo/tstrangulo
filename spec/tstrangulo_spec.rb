@@ -34,4 +34,26 @@ describe Tstrangulo do
 		stran.ponerLetraEnPalabra("J")
 		expect(stran.verEstadoJuego).to eq "Te quedan 3 intentos"
 	end
+	
+	it "Ingresa la letra R, J, W, X que son incorrectas, debe quedar 1 intento" do
+	    stran = Tstrangulo.new 0
+	    stran.mostrarEspacios
+		stran.ponerLetraEnPalabra("R")
+		stran.ponerLetraEnPalabra("J")
+		stran.ponerLetraEnPalabra("W")
+		stran.ponerLetraEnPalabra("X")
+		expect(stran.verEstadoJuego).to eq "Te queda un solo intento! JOJOLETE!"
+	end
+	
+	it "Ingresa la letra R, J, W, X que son incorrectas, luego O correcta y Z incorrecta PERDISTE" do
+	    stran = Tstrangulo.new 0
+	    stran.mostrarEspacios
+		stran.ponerLetraEnPalabra("R")
+		stran.ponerLetraEnPalabra("J")
+		stran.ponerLetraEnPalabra("W")
+		stran.ponerLetraEnPalabra("X")
+		stran.ponerLetraEnPalabra("O")
+		stran.ponerLetraEnPalabra("Z")
+		expect(stran.verEstadoJuego).to eq "FRITO PESCADITO. ESTAS STRANGULADO!"
+	end
 end

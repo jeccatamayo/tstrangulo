@@ -57,7 +57,15 @@ class Tstrangulo
 	
 	def verEstadoJuego
 		restante = (MAX_FALLOS - @numFallos)
-		return "Te quedan #{restante} intentos"
+		mensaje = ""
+		if restante > 1
+			mensaje = "Te quedan #{restante} intentos"
+		elsif restante == 1
+			mensaje = "Te queda un solo intento! JOJOLETE!"
+		else 
+			mensaje = "FRITO PESCADITO. ESTAS STRANGULADO!"
+		end
+		return mensaje
 	end
 end
 
