@@ -1,6 +1,7 @@
 class Tstrangulo
 	
 	def initialize(aleatorio = rand(0...PALABRAS.length))
+		@indice = aleatorio
 	    @palabra = PALABRAS[aleatorio]
 	    @palabraEspacios = ""
 	    @numLetras = 0
@@ -21,10 +22,10 @@ class Tstrangulo
 		"O enfermedad de Besnier-Boeck, es una enfermedad granulomatosa sistémica, de carácter autoinmune",
 		"Relacionado a las capas internas y externas del cerebro",
 		"Un género extinto de dinosaurios tireofóros conocido por una sola especie que vivió a finales del período Cretácico, hace aproximadamente 68 a 66 millones de años",
-		"Def 5",
-		"Def 6",
-		"Def 7",
-		"Def 8"
+		"También llamada enfermedad del sueño, es una parasitosis transmitida por un vector como la Mosca Tse Tse",
+		"Es un género de 10 a 20 especies de fanerógamas pertenecientes a la familia Plumbaginaceae, nativas de regiones templadas cálidas a tropicales",
+		"Buglosa, chupamieles, hierba azul, lengua de vaca o paquetequieromañosa (Echium vulgare) es una planta incluida en el género Echium",
+		"De nombre común capachito, zapatitos de Venus, topa-topa, o zapatitos de la Virgen, es un género de fanerógamas"
 	]
 
 	def mostrarEspacios
@@ -103,6 +104,12 @@ class Tstrangulo
 		else
 			mensaje = ""
 		end
+	end
+	
+	def regalarPista
+		puts @indice
+		puts DEFINICIONES[@indice]
+		return DEFINICIONES[@indice]
 	end
 end
 

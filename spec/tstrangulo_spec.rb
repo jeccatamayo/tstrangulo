@@ -109,4 +109,9 @@ describe Tstrangulo do
 		stran.ponerLetraEnPalabra("M")
 		expect(stran.esJuegoTerminado) == false
 	end
+	
+	it "Te regalo una pista chochera" do
+	    stran = Tstrangulo.new 7
+		expect(stran.regalarPista).to eq "De nombre común capachito, zapatitos de Venus, topa-topa, o zapatitos de la Virgen, es un género de fanerógamas"
+	end
 end
