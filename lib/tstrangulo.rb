@@ -16,7 +16,16 @@ class Tstrangulo
 	
 	MAX_FALLOS = 5
 	PALABRAS = ["I G U A N O D O N T E ", "S A R C O I D O S I S ", "M E N I N G O E N C E F A L I C O ", "A N K Y L O S A U R U S ", "T R I P A N O S O M I A S I S ", "P L U M B A G O ", "V I B O R E R A ", "C A L C E O L A R I A "]
-	DEFINICIONES = ["Def 1", "Def 2", "Def 3", "Def 4", "Def 5", "Def 6", "Def 7", "Def 8"]
+	DEFINICIONES = [
+		"Su nombre significa Diente de Iguana. Vivió a principios del Cretácico. Media diez metros de longitud y pesaba aproximadamente cinco toneladas",
+		"O enfermedad de Besnier-Boeck, es una enfermedad granulomatosa sistémica, de carácter autoinmune",
+		"Relacionado a las capas internas y externas del cerebro",
+		"Un género extinto de dinosaurios tireofóros conocido por una sola especie que vivió a finales del período Cretácico, hace aproximadamente 68 a 66 millones de años",
+		"Def 5",
+		"Def 6",
+		"Def 7",
+		"Def 8"
+	]
 
 	def mostrarEspacios
 		tempo = @palabra
@@ -84,7 +93,16 @@ class Tstrangulo
 	end
 	
 	def esJuegoTerminado
-		@flagJuegoTerminado
+		return @flagJuegoTerminado
+	end
+	
+	def pintarDisabled
+		mensaje = ""
+		if esJuegoTerminado
+			mensaje = "disabled"
+		else
+			mensaje = ""
+		end
 	end
 end
 
