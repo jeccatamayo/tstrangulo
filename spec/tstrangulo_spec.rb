@@ -14,7 +14,8 @@ describe Tstrangulo do
 	
 	it "Ingresa la A para descubrir la palabra" do
 	    stran = Tstrangulo.new
-		expect(stran.ponerLetraEnPalabra("A","_ _ _ _ _ _ _ _ _ _ _ ")).to eq "_ _ _ A _ _ _ _ _ _ _ "
-		expect(stran.ponerLetraEnPalabra("O",stran.ponerLetraEnPalabra("A","_ _ _ _ _ _ _ _ _ _ _ "))).to eq "_ _ _ A _ O _ O _ _ _ "
+	    stran.mostrarEspacios
+		expect(stran.ponerLetraEnPalabra("A")).to eq "_ _ _ A _ _ _ _ _ _ _ "
+		expect(stran.ponerLetraEnPalabra("O")).to eq "_ _ _ A _ O _ O _ _ _ "
 	end
 end

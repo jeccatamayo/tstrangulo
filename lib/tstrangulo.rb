@@ -30,17 +30,16 @@ class Tstrangulo
 		palabra.include? letra
 	end
 	
-	def ponerLetraEnPalabra(letra,palabraPista)
+	def ponerLetraEnPalabra(letra)
 		ocurrencias = @palabra.count(letra)
 		val = 0
 		(1..ocurrencias).each do |n|
     		indice = @palabra[val..@palabra.length].index(letra)
 			replacement = '...'
-			palabraPista[indice+val] = letra
+			@palabraEspacios[indice+val] = letra
 			val=indice+1
 		end
-		puts palabraPista
-		return palabraPista
+		return @palabraEspacios
 	end
 end
 
