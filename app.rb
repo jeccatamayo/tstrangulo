@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'better_errors'
+require './lib/tstrangulo'
 
 configure :development do
   use BetterErrors::Middleware
@@ -10,5 +11,8 @@ enable :sessions
 set :session_secret, 'thisIsAKleerSecret'
 
 get '/' do
+	tstrangulo = Tstrangulo.new
+	session["tstrangulo"] = tstrangulo
+	session["tstrangulo"].mostrarEspacios
 	erb :index
 end
