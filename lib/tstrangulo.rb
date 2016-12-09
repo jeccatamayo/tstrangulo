@@ -1,11 +1,21 @@
 class Tstrangulo
-	@palabra = "LAMPARA"
+	
+	def initialize
+	    @palabra = "LAMPARA"
+	    @palabraEspacios = ""
+	    @numLetras = 0
+	end
 
 	def mostrarEspacios
-			@palabra = "_ _ _ _ _ _ _"
+	    @numLetras = @palabra.length
+	    for i in 0..@numLetras-1
+
+	            @palabraEspacios = @palabraEspacios << "_ "
+
+	    end
 	end
 	
 	def verPalabra 
-	    @palabra
+	    @palabraEspacios
 	end 
 end
