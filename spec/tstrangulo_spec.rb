@@ -56,4 +56,13 @@ describe Tstrangulo do
 		stran.ponerLetraEnPalabra("Z")
 		expect(stran.verEstadoJuego).to eq "FRITO PESCADITO. ESTAS STRANGULADO!"
 	end
+	
+		it "Ingresa la letra R y J muestra letras erradas" do
+	    stran = Tstrangulo.new 0
+	    stran.mostrarEspacios
+		stran.ponerLetraEnPalabra("R")
+		stran.ponerLetraEnPalabra("J")
+		stran.mostrarLetrasErradas
+		expect(stran.mostrarLetrasErradas).to eq "R, J"
+	end
 end

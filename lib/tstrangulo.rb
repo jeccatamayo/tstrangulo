@@ -41,7 +41,7 @@ class Tstrangulo
 			@numIntentos+=1
 		else
 			@numFallos+=1
-			@listaLetrasErradas = @listaLetrasErradas + ", " + letra
+			@listaLetrasErradas = @listaLetrasErradas  + letra
 		end
 			
 		ocurrencias = @palabra.count(letra)
@@ -66,6 +66,11 @@ class Tstrangulo
 			mensaje = "FRITO PESCADITO. ESTAS STRANGULADO!"
 		end
 		return mensaje
+	end
+	
+	def mostrarLetrasErradas
+		lista=@listaLetrasErradas.split ""
+		lista.join ", "
 	end
 end
 
