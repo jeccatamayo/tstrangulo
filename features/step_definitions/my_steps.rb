@@ -37,3 +37,7 @@ end
 Then(/^debo ver "([^"]*)"$/) do |texto|
   expect(page.body).to match /#{texto}/m
 end
+
+Then(/^debo ver que la palabra "([^"]*)"$/) do |texto|
+  expect(page.body).to match /#{texto}/m
+end

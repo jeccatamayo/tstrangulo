@@ -3,6 +3,10 @@ Feature:
 	Quiero Ver el numero de intentos que me quedan
 	Para saber el estado del juego
 	
+Scenario: Ver el texto de la pista
+	Given abro la aplicacion
+	Then debo ver que la palabra "Pista"
+
 Scenario: Ver que la palabra se complete con la letra ingresada
 	Given abro la aplicacion
 	And ingreso la letra "A"
