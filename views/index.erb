@@ -17,19 +17,26 @@
 					<td><input type="text" name="letra" maxlength="1" size="3px" style="text-transform: uppercase"></td>
 				</tr>
 				<tr>
-					<td style="padding-top: 50px" colspan="2"><input type="submit" name="validar" value="validar" /></td>
+					<td style="padding-top: 30px" colspan="2"><input type="submit" name="validar" value="validar" disabled="<%= session["tstrangulo"].esJuegoTerminado %>" /></td>
 				</tr>			
 				<tr>
-					<td><label name="palabra" style="font-size: 100px"><%= session["tstrangulo"].verPalabra %></label></td>
+					<td><label name="palabra" style="font-size: 90px"><%= session["tstrangulo"].verPalabra %></label></td>
 				</tr>
 				
 			</table>
 			
 		</form>
-		
+		<br>
+		<br>
+		<label name="erradas" style="text-transform: uppercase; font-size: 50px; color:blue"><%= session["tstrangulo"].mostrarLetrasErradas %></label>
+		<br>
+		<br>
+		<label name="definicion" style="font-size: 20px;">Pista: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</label>
+		<br>
+		<br>
 		<form action="/">
-					<input type="submit" name="inicio" value="inicio" />
-				</form>
+			<input type="submit" name="inicio" value="inicio" />
+		</form>
 	</center>
 </body>
 </html>
