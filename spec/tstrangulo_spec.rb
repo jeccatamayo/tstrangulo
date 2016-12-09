@@ -57,12 +57,26 @@ describe Tstrangulo do
 		expect(stran.verEstadoJuego).to eq "FRITO PESCADITO. ESTAS STRANGULADO!"
 	end
 	
-		it "Ingresa la letra R y J muestra letras erradas" do
+	it "Ingresa la letra R y J muestra letras erradas" do
 	    stran = Tstrangulo.new 0
 	    stran.mostrarEspacios
 		stran.ponerLetraEnPalabra("R")
 		stran.ponerLetraEnPalabra("J")
-		stran.mostrarLetrasErradas
 		expect(stran.mostrarLetrasErradas).to eq "R, J"
+	end
+	
+	it "Ingresa las letras correctas, debe mostrar que ganaste" do
+	    stran = Tstrangulo.new 5
+	    stran.mostrarEspacios
+		stran.ponerLetraEnPalabra("O")
+		stran.ponerLetraEnPalabra("g")
+		stran.ponerLetraEnPalabra("r")
+		stran.ponerLetraEnPalabra("a")
+		stran.ponerLetraEnPalabra("b")
+		stran.ponerLetraEnPalabra("p")
+		stran.ponerLetraEnPalabra("L")
+		stran.ponerLetraEnPalabra("u")
+		stran.ponerLetraEnPalabra("M")
+		expect(stran.verEstadoJuego).to eq "ERES EL PUTO AMO! Eres un CERTIFIED STRANGULADO MASTER, O sea un CSM"
 	end
 end

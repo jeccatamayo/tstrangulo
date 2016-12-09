@@ -19,6 +19,6 @@ end
 
 post '/validar' do
     letra = params["letra"]
-    session["tstrangulo"].ponerLetraEnPalabra letra 
+    session["tstrangulo"].ponerLetraEnPalabra letra
     erb :index
 end

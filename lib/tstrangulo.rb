@@ -6,6 +6,7 @@ class Tstrangulo
 	    @numLetras = 0
 	    @palabraPista = ""
 	    @listaLetrasErradas=""
+	    @flagJuegoTerminado = false
 	    
 	    #############################
 	    
@@ -14,7 +15,7 @@ class Tstrangulo
 	end
 	
 	MAX_FALLOS = 5
-	PALABRAS = ["I G U A N O D O N T E ", "S A R C O I D O S I S ", "M E N I N G O E N C E F A L I T I S ", "A N K Y L O S A U R U S ", "T R I P A N O S O M I A S I S ", "P L U M B A G O ", "V I B O R E R A ", "C A L C E O L A R I A "]
+	PALABRAS = ["I G U A N O D O N T E ", "S A R C O I D O S I S ", "M E N I N G O E N C E F A L I C O ", "A N K Y L O S A U R U S ", "T R I P A N O S O M I A S I S ", "P L U M B A G O ", "V I B O R E R A ", "C A L C E O L A R I A "]
 	DEFINICIONES = ["Def 1", "Def 2", "Def 3", "Def 4", "Def 5", "Def 6", "Def 7", "Def 8"]
 
 	def mostrarEspacios
@@ -33,10 +34,11 @@ class Tstrangulo
 	
 	def letraExisteEnPalabra(letra)
 		palabra = @palabra
-		palabra.include? letra
+		palabra.include? letra.upcase
 	end
 	
 	def ponerLetraEnPalabra(letra)
+		letra = letra.upcase
 		if letraExisteEnPalabra(letra)
 			@numIntentos+=1
 		else
@@ -58,12 +60,18 @@ class Tstrangulo
 	def verEstadoJuego
 		restante = (MAX_FALLOS - @numFallos)
 		mensaje = ""
-		if restante > 1
-			mensaje = "Te quedan #{restante} intentos"
-		elsif restante == 1
-			mensaje = "Te queda un solo intento! JOJOLETE!"
-		else 
-			mensaje = "FRITO PESCADITO. ESTAS STRANGULADO!"
+		if @palabraEspacios.include? "_"
+			if restante > 1
+				mensaje = "Te quedan #{restante} intentos"
+			elsif restante == 1
+				mensaje = "Te queda un solo intento! JOJOLETE!"
+			else 
+				@flagJuegoTerminado = true
+				mensaje = "FRITO PESCADITO. ESTAS STRANGULADO!"
+			end
+		else
+			@flagJuegoTerminado = true
+			mensaje = "ERES EL PUTO AMO! Eres un CERTIFIED STRANGULADO MASTER, O sea un CSM"
 		end
 		return mensaje
 	end
@@ -71,6 +79,10 @@ class Tstrangulo
 	def mostrarLetrasErradas
 		lista=@listaLetrasErradas.split ""
 		lista.join ", "
+	end
+	
+	def esJuegoTerminado
+		@flagJuegoTerminado
 	end
 end
 
