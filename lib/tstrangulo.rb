@@ -16,7 +16,7 @@ class Tstrangulo
 	end
 	
 	MAX_FALLOS = 5
-	PALABRAS = ["I G U A N O D O N T E ", "S A R C O I D O S I S ", "M E N I N G O E N C E F A L I C O ", "A N K Y L O S A U R U S ", "T R I P A N O S O M I A S I S ", "P L U M B A G O ", "V I B O R E R A ", "C A L C E O L A R I A "]
+	PALABRAS = ["I G U A N O D O N T E ", "S A R C O I D O S I S T ", "M E N I N G O E N C E F A L I C O ", "A N K Y L O S A U R U S ", "T R I P A N O S O M I A S I S ", "P L U M B A G O ", "V I B O R E R A ", "C A L C E O L A R I A "]
 	DEFINICIONES = [
 		"Su nombre significa Diente de Iguana. Vivió a principios del Cretácico. Media diez metros de longitud y pesaba aproximadamente cinco toneladas",
 		"O enfermedad de Besnier-Boeck, es una enfermedad granulomatosa sistémica, de carácter autoinmune",
