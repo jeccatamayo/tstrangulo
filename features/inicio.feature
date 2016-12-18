@@ -1,5 +1,5 @@
 Feature:
-	Como Diana
+	Como Jerson
 	Quiero Ingresar una letra 
 	Para Saber si forma parte de la palabra
 
